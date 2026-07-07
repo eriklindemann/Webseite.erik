@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Lebenslauf - Erik Lindemann</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
+            background-color: #f4f6f8;
+            @bottom-right {
+                content: counter(page);
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 9pt;
+                color: #888;
+            }
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.5;
+            font-size: 10.5pt;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* Header Banner Style */
+        .header-banner {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .header-banner h1 {
+            margin: 0 0 8px 0;
+            font-size: 24pt;
+            letter-spacing: -0.5px;
+        }
+        .header-banner p {
+            margin: 0 0 15px 0;
+            font-size: 12pt;
+            color: #cbd5e1;
+        }
+        .contact-info {
+            font-size: 9.5pt;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            color: #0f172a;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0 0 12px 0;
+        }
+        
+        /* Projects Section */
+        .project-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+        .project-title {
+            font-weight: bold;
+            font-size: 11.5pt;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+        .project-tech {
+            font-size: 9pt;
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        /* CV Timeline Style */
+        .cv-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .cv-row {
+            page-break-inside: avoid;
+        }
+        .cv-date {
+            width: 28%;
+            padding: 12px 10px 12px 0;
+            font-weight: bold;
+            color: #475569;
+            vertical-align: top;
+            font-size: 10pt;
+        }
+        .cv-content {
+            width: 72%;
+            padding: 12px 0 12px 15px;
+            border-left: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        .cv-title {
+            font-weight: bold;
+            color: #0f172a;
+            font-size: 11pt;
+        }
+        .cv-company {
+            font-size: 9.5pt;
+            color: #64748b;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .cv-details {
+            margin: 5px 0 0 0;
+            padding-left: 15px;
+        }
+        .cv-details li {
+            margin-bottom: 4px;
+        }
+        
+        /* Skills & Hobbies Style */
+        .grid-container {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .grid-section {
+            margin-bottom: 15px;
+        }
+        .grid-section:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-banner">
+            <h1>Erik Lindemann</h1>
+            <p>Schüler der Fachoberschule Neuburg a.d. Donau (Zweig Technik)</p>
+            <div class="contact-info">
+                E-Mail: erik.lindemann08@icloud.com
+            </div>
+        </div>
+
+        <h2>Über mich</h2>
+        <p>Ich bin ein technologiebegeisterter Schüler im technischen Zweig der Fachoberschule mit einem ausgeprägten logischen Denkvermögen und handwerklichem Geschick. Ich bin sehr motiviert, Neues zu lernen, und befasse mich gerne mit komplexen physikalischen Problemen. Zudem bin ich sehr teamfähig, was sich auch in meinen Hobbys widerspiegelt.</p>
+
+        <h2>Technische Projekte</h2>
+        
+        <div class="project-card">
+            <div class="project-title">D1 mini Projekt</div>
+            <div class="project-tech">Technologien: Programmierung in C, Löten</div>
+            <div><strong>Beschreibung:</strong> Löten und Programmieren der Schaltung. <strong>Funktion:</strong> Steuerung von LEDs und das Auslesen mehrerer Sensoren.</div>
+            <p>Die Schaltung verfügt außerdem über eine Webseite, über die die Daten ausgelesen werden können.</p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Getriebekupplung</div>
+            <div class="project-tech">Technologien: CNC-Programmierung (PAL), Werkzeugmaschinen</div>
+            <p><strong>Beschreibung:</strong> Fertigung des Werkstücks durch CNC-Drehen und Fräsen an herkömmlichen Werkzeugmaschinen.</p>
+        </div>
+
+        <h2>Lebenslauf (CV)</h2>
+        
+        <table class="cv-table">
+            <tr class="cv-row">
+                <td class="cv-date">09/2025 – 07/2027</td>
+                <td class="cv-content">
+                    <div class="cv-title">Fachhochschulreife (Technik)</div>
+                    <div class="cv-company">Fachoberschule Neuburg a.d. Donau</div>
+                    <ul class="cv-details">
+                        <li>Voraussichtlicher Abschluss 2027 mit guten und sehr guten Leistungen in Mathematik und Physik</li>
+                        <li>Teilnahme am Wahlpflichtfach Informatik (September 2026 – Juli 2027)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="cv-row">
+                <td class="cv-date">09/2025 – 07/2026</td>
+                <td class="cv-content">
+                    <div class="cv-title">Praktikum in der Elektrotechnik (10 Wochen)</div>
+                    <div class="cv-company">Elektrowerkstatt der FOS Neuburg a.d. Donau</div>
+                    <ul class="cv-details">
+                        <li>Löten und Programmieren von Schaltungen</li>
+                        <li>Aufbau und Funktionsweise elektrotechnischer Bauteile</li>
+                        <li>Erwerb von Grundkenntnissen in der Elektronik</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="cv-row">
+                <td class="cv-date">09/2025 – 07/2026</td>
+                <td class="cv-content">
+                    <div class="cv-title">Praktikum in der Metallbearbeitung (9 Wochen)</div>
+                    <div class="cv-company">Metallwerkstatt der FOS Neuburg a.d. Donau</div>
+                    <ul class="cv-details">
+                        <li>Selbstständiges Arbeiten an Werkzeugmaschinen</li>
+                        <li>Programmierung und Bedienung von CNC-Maschinen</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="cv-row">
+                <td class="cv-date">02/2023 – 06/2025</td>
+                <td class="cv-content">
+                    <div class="cv-title">Schulbildung (Realschulabschluss)</div>
+                    <div class="cv-company">Staatliche Realschule Neuburg, Neuburg a.d. Donau</div>
+                </td>
+            </tr>
+            <tr class="cv-row">
+                <td class="cv-date">09/2019 – 02/2023</td>
+                <td class="cv-content">
+                    <div class="cv-title">Schulbildung (Gymnasiale Laufbahn)</div>
+                    <div class="cv-company">Descartes-Gymnasium Neuburg, Neuburg a.d. Donau</div>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Fähigkeiten & Kompetenzen</h2>
+        <div class="grid-container">
+            <div class="grid-section">
+                <strong>IT- / Softwarekenntnisse:</strong> Gute Kenntnisse in der CNC-Programmierung (PAL) und in der Programmierung in C; praktische Anwendungserfahrung in MS-Office-Programmen
+            </div>
+            <div class="grid-section">
+                <strong>Sprachkenntnisse:</strong> Englisch (fließend in Wort und Schrift)
+            </div>
+            <div class="grid-section">
+                <strong>Persönliche Stärken:</strong> Teamfähigkeit, handwerkliche Veranlagung, Belastbarkeit, logisches Denken
+            </div>
+        </div>
+
+        <h2>Hobbys & Interessen</h2>
+        <div class="grid-container">
+            <div class="grid-section">
+                <strong>Technisch:</strong> Das Verstehen physikalischer Probleme, Astronomie, Schach, Reparieren von Geräten
+            </div>
+            <div class="grid-section">
+                <strong>Sozial & Sportlich:</strong> Volleyball, Pfadfinder, Tennis
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
