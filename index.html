@@ -23,24 +23,25 @@
             max-width: 1000px;
         }
 
-        /* Header: Asymmetrisch mit Profilbild rechts neben dem Namen */
+        /* Header: Asymmetrisch mit größerem Profilbild ganz rechts */
         header {
             display: table;
             width: 100%;
-            max-width: 600px;
+            max-width: 750px; /* Erhöht, um dem Bild rechts mehr Platz zu geben */
             margin-bottom: 80px;
         }
 
         .header-text {
             display: table-cell;
             vertical-align: bottom;
+            padding-right: 40px;
         }
 
         .header-image {
             display: table-cell;
             vertical-align: bottom;
             text-align: right;
-            width: 130px;
+            width: 180px; /* Platz für das größere Bild */
         }
 
         header h1 {
@@ -64,13 +65,14 @@
             letter-spacing: 0.5px;
         }
 
-        /* Profilbild im Header */
+        /* Profilbild im Header: Größer und weiter rechts positioniert */
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 160px;
+            height: 160px;
             object-fit: cover;
             border: 1px solid #000000;
             display: inline-block;
+            margin-right: -10px; /* Schiebt das Bild optisch weiter an den rechten Rand */
         }
 
         /* Dekorative, harte Trennlinie */
@@ -192,7 +194,7 @@
             z-index: 10;
         }
 
-        /* Subtiler Hover-Effekt (Pfeil wird leicht größer und weiß bei dunklen Bildern) */
+        /* Subtiler Hover-Effekt */
         .slider-btn:hover {
             transform: translateY(-50%) scale(1.1);
             color: #666666;
@@ -375,25 +377,25 @@
             <div class="slider" id="projectSlider">
                 
                 <div class="slide">
-                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=D1+Mini+-+Bild+1" alt="D1 mini 1">
-                    <div class="slide-caption">D1 Mini Projekt — Platine</div>
+                    <img src="IMG_3998.jpeg" alt="D1 mini 1">
+                    <div class="slide-caption">D1 Mini Projekt</div>
                 </div>
                 <div class="slide">
-                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=Schaltung+-+Bild+2" alt="D1 mini 2">
-                    <div class="slide-caption">D1 Mini Projekt — Schaltungsaufbau</div>
+                    <img src="IMG_3999.jpeg" alt="D1 mini 2">
+                    <div class="slide-caption">D1 Mini Projekt</div>
                 </div>
                 <div class="slide">
-                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=Webseite+-+Bild+3" alt="D1 mini 3">
-                    <div class="slide-caption">D1 Mini Projekt — Web-Interface</div>
+                    <img src="IMG_4001.jpeg" alt="Getriebekupplung 1">
+                    <div class="slide-caption">Getriebekupplung</div>
                 </div>
 
                 <div class="slide">
-                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=Getriebe+-+Bild+1" alt="Getriebekupplung 1">
-                    <div class="slide-caption">Getriebekupplung — Fertiges Werkstück</div>
+                    <img src="IMG_4002.jpeg" alt="Getriebekupplung 2">
+                    <div class="slide-caption">Getriebekupplung</div>
                 </div>
                 <div class="slide">
-                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=CNC+Fräsen+-+Bild+2" alt="Getriebekupplung 2">
-                    <div class="slide-caption">Getriebekupplung — CNC-Fräsprozess</div>
+                    <img src="IMG_4003.jpeg" alt="Getriebekupplung 3">
+                    <div class="slide-caption">Getriebekupplung</div>
                 </div>
 
             </div>
