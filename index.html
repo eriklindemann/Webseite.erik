@@ -93,9 +93,77 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
+
+        /* SWIPER / SLIDER STYLES */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0 40px 0;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            width: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            min-width: 100%;
+            max-width: 100%;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+            border: 1px solid #000000;
+        }
+
+        /* Minimalistische Desktop-Buttons */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 10;
+        }
+
+        .slider-btn:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
 
         /* Lebenslauf: Weg von der Tabelle, hin zu einer modernen Liste */
         .cv-item {
@@ -124,7 +192,7 @@
         }
 
         .cv-details {
-            list-style: none; /* Keine Standard-Punkte */
+            list-style: none;
         }
 
         .cv-details li {
@@ -133,7 +201,6 @@
             margin-bottom: 5px;
         }
 
-        /* Minimalistischer Bindestrich statt Bullet-Point */
         .cv-details li::before {
             content: "—";
             position: absolute;
@@ -154,6 +221,15 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 5px;
+        }
+
+        /* Profilbild Styling am Ende */
+        .profile-img {
+            max-width: 150px;
+            height: auto;
+            border: 1px solid #000000;
+            margin-top: 20px;
+            display: block;
         }
     </style>
 </head>
@@ -259,8 +335,49 @@
             <strong>Sozial & Sportlich</strong>
             <p>Volleyball, Pfadfinder, Tennis</p>
         </div>
-    </main>
-    <img src="2026-07-06_16-56-39_32.jpeg" style="max-width: 150px; height: auto;">
 
+        <!-- ========================================== -->
+        <!-- BILDERGALERIEN HIER AM ENDE DER WEBSEITE -->
+        <!-- ========================================== -->
+        <h2>Projektaufnahmen</h2>
+        
+        <p><strong>Bilder zum D1 mini Projekt:</strong></p>
+        <div class="slider-container">
+            <div class="slider" id="slider1">
+                <div class="slide"><img src="https://via.placeholder.com/600x350/ffffff/000000?text=D1+Mini+-+Bild+1" alt="D1 mini 1"></div>
+                <div class="slide"><img src="https://via.placeholder.com/600x350/ffffff/000000?text=Schaltung+-+Bild+2" alt="D1 mini 2"></div>
+                <div class="slide"><img src="https://via.placeholder.com/600x350/ffffff/000000?text=Webseite+-+Bild+3" alt="D1 mini 3"></div>
+            </div>
+            <button class="slider-btn prev-btn" onclick="scrollSlider('slider1', -1)">&#10094;</button>
+            <button class="slider-btn next-btn" onclick="scrollSlider('slider1', 1)">&#10095;</button>
+        </div>
+
+        <p><strong>Bilder zur Getriebekupplung:</strong></p>
+        <div class="slider-container">
+            <div class="slider" id="slider2">
+                <div class="slide"><img src="https://via.placeholder.com/600x350/ffffff/000000?text=Getriebe+-+Bild+1" alt="Getriebekupplung 1"></div>
+                <div class="slide"><img src="https://via.placeholder.com/600x350/ffffff/000000?text=CNC+Fräsen+-+Bild+2" alt="Getriebekupplung 2"></div>
+            </div>
+            <button class="slider-btn prev-btn" onclick="scrollSlider('slider2', -1)">&#10094;</button>
+            <button class="slider-btn next-btn" onclick="scrollSlider('slider2', 1)">&#10095;</button>
+        </div>
+
+    </main>
+
+    <!-- Profilbild ganz unten -->
+    <h2>Profilbild</h2>
+    <img src="2026-07-06_16-56-39_32.jpeg" alt="Erik Lindemann" class="profile-img">
+
+    <!-- JavaScript für die präzise Slider-Navigation -->
+    <script>
+        function scrollSlider(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const slideWidth = slider.clientWidth;
+            slider.scrollBy({
+                left: direction * slideWidth,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
