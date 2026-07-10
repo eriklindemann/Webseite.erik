@@ -23,13 +23,28 @@
             max-width: 1000px;
         }
 
-        /* Header: Übergroß, asymmetrisch und linksbündig */
+        /* Header: Asymmetrisch mit Profilbild rechts neben dem Namen */
         header {
+            display: table;
+            width: 100%;
+            max-width: 600px;
             margin-bottom: 80px;
         }
 
+        .header-text {
+            display: table-cell;
+            vertical-align: bottom;
+        }
+
+        .header-image {
+            display: table-cell;
+            vertical-align: bottom;
+            text-align: right;
+            width: 130px;
+        }
+
         header h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.3rem, 5.5vw, 4rem);
             line-height: 1.0;
             font-weight: 900;
             letter-spacing: -2px;
@@ -38,14 +53,24 @@
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 500;
             margin-bottom: 10px;
+            max-width: 450px;
         }
 
         .contact-info {
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 0.5px;
+        }
+
+        /* Profilbild im Header */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #000000;
+            display: inline-block;
         }
 
         /* Dekorative, harte Trennlinie */
@@ -56,7 +81,7 @@
             margin: 40px 0;
         }
 
-        /* Überschriften: Klein, laut und linksbündig ohne Deko-Balken */
+        /* Überschriften: Klein, laut und linksbündig */
         h2 {
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -71,7 +96,7 @@
             margin-bottom: 15px;
         }
 
-        /* Projekte: Keine grauen Karten mehr, sondern klare Listen mit Linien */
+        /* Projekte: Klare Listen mit Linien */
         .project-card {
             max-width: 600px;
             border-bottom: 1px solid #000000;
@@ -97,7 +122,7 @@
             font-weight: 600;
         }
 
-        /* SWIPER / SLIDER STYLES */
+        /* MODERN & MINIMALISTISCH SLIDER SYLES */
         .slider-container {
             position: relative;
             width: 100%;
@@ -126,6 +151,7 @@
             max-width: 100%;
             scroll-snap-align: start;
             flex-shrink: 0;
+            position: relative;
         }
 
         .slide img {
@@ -137,35 +163,45 @@
             border: 1px solid #000000;
         }
 
-        /* Minimalistische Desktop-Buttons */
+        /* Bildbeschriftung im Slider */
+        .slide-caption {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* Ultra-minimalistische Pfeile (Feine Linien ohne Hintergrund) */
         .slider-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: #ffffff;
+            background: none;
             color: #000000;
-            border: 1px solid #000000;
-            width: 35px;
-            height: 35px;
+            border: none;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 300;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
+            transition: transform 0.2s, color 0.2s;
             z-index: 10;
         }
 
+        /* Subtiler Hover-Effekt (Pfeil wird leicht größer und weiß bei dunklen Bildern) */
         .slider-btn:hover {
-            background: #000000;
-            color: #ffffff;
+            transform: translateY(-50%) scale(1.1);
+            color: #666666;
         }
 
-        .prev-btn { left: 10px; }
-        .next-btn { right: 10px; }
+        .prev-btn { left: 5px; }
+        .next-btn { right: 5px; }
 
-        /* Lebenslauf: Weg von der Tabelle, hin zu einer modernen Liste */
+        /* Lebenslauf: Moderne Liste */
         .cv-item {
             display: flex;
             flex-direction: column;
@@ -207,7 +243,7 @@
             left: 0;
         }
 
-        /* Kompetenzen & Hobbies: Strukturierte, clevere Blöcke */
+        /* Kompetenzen & Hobbies: Strukturierte Blöcke */
         .info-block {
             max-width: 600px;
             border-top: 1px solid #000000;
@@ -222,24 +258,20 @@
             letter-spacing: 1px;
             margin-bottom: 5px;
         }
-
-        /* Profilbild Styling am Ende */
-        .profile-img {
-            max-width: 150px;
-            height: auto;
-            border: 1px solid #000000;
-            margin-top: 20px;
-            display: block;
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Erik<br>Lindemann</h1>
-        <p>Schüler der Fachoberschule Neuburg a.d. Donau (Zweig Technik)</p>
-        <div class="contact-info">
-            E-Mail: erik.lindemann08@icloud.com
+        <div class="header-text">
+            <h1>Erik<br>Lindemann</h1>
+            <p>Schüler der Fachoberschule Neuburg a.d. Donau (Zweig Technik)</p>
+            <div class="contact-info">
+                E-Mail: erik.lindemann08@icloud.com
+            </div>
+        </div>
+        <div class="header-image">
+            <img src="2026-07-06_16-56-39_32.jpeg" alt="Erik Lindemann" class="profile-img">
         </div>
     </header>
 
@@ -336,39 +368,41 @@
             <p>Volleyball, Pfadfinder, Tennis</p>
         </div>
 
-        <!-- ========================================== -->
-        <!-- BILDERGALERIEN HIER AM ENDE DER WEBSEITE -->
-        <!-- ========================================== -->
         <h2>Projektaufnahmen</h2>
+        <p>Wische nach rechts oder nutze die Pfeile, um alle Bilder deiner technischen Arbeiten anzusehen:</p>
         
-        <p><strong>Bilder zur Getriebekupplung Projekt:</strong></p>
         <div class="slider-container">
-            <div class="slider" id="slider1">
-                <div class="slide"><img src="IMG_4001.jpeg" alt="Getriebekupplung 1"></div>
-                <div class="slide"><img src="IMG_4002.jpeg" alt="Getriebekupplung 2"></div>  
-                <div class="slide"><img src="IMG_4003.jpeg" alt="Getriebekupplung 3"></div>
-            </div>
-            <button class="slider-btn prev-btn" onclick="scrollSlider('slider1', -1)">&#10094;</button>
-            <button class="slider-btn next-btn" onclick="scrollSlider('slider1', 1)">&#10095;</button>
-        </div>
+            <div class="slider" id="projectSlider">
+                
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=D1+Mini+-+Bild+1" alt="D1 mini 1">
+                    <div class="slide-caption">D1 Mini Projekt — Platine</div>
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=Schaltung+-+Bild+2" alt="D1 mini 2">
+                    <div class="slide-caption">D1 Mini Projekt — Schaltungsaufbau</div>
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=Webseite+-+Bild+3" alt="D1 mini 3">
+                    <div class="slide-caption">D1 Mini Projekt — Web-Interface</div>
+                </div>
 
-        <p><strong>Bilder zum D1-mini Projekt:</strong></p>
-        <div class="slider-container">
-            <div class="slider" id="slider2">
-                <div class="slide"><img src="IMG_3998.jpeg" alt="D1-mini 1"></div>
-                <div class="slide"><img src="IMG_3999.jpeg" alt="D1-mini 2"></div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=Getriebe+-+Bild+1" alt="Getriebekupplung 1">
+                    <div class="slide-caption">Getriebekupplung — Fertiges Werkstück</div>
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x350/ffffff/000000?text=CNC+Fräsen+-+Bild+2" alt="Getriebekupplung 2">
+                    <div class="slide-caption">Getriebekupplung — CNC-Fräsprozess</div>
+                </div>
+
             </div>
-            <button class="slider-btn prev-btn" onclick="scrollSlider('slider2', -1)">&#10094;</button>
-            <button class="slider-btn next-btn" onclick="scrollSlider('slider2', 1)">&#10095;</button>
+            <button class="slider-btn prev-btn" onclick="scrollSlider('projectSlider', -1)">&#8592;</button>
+            <button class="slider-btn next-btn" onclick="scrollSlider('projectSlider', 1)">&#8594;</button>
         </div>
 
     </main>
 
-    <!-- Profilbild ganz unten -->
-    <h2>Profilbild</h2>
-    <img src="2026-07-06_16-56-39_32.jpeg" alt="Erik Lindemann" class="profile-img">
-
-    <!-- JavaScript für die präzise Slider-Navigation -->
     <script>
         function scrollSlider(sliderId, direction) {
             const slider = document.getElementById(sliderId);
